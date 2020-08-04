@@ -88,8 +88,11 @@ export default {
         },
         save()
         {
-            axios.post('/api/images', this.image)
+            axios.post('/api/images',  this.image)
             .then(res => {
+                this.image.title = null
+                this.$refs.image.value = null
+                this.image.filename = null
                 EventBus.$emit('snackbar', 'Image Uploaded successfully!', 'green')
             })
             .catch(error => {

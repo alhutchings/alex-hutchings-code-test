@@ -11,8 +11,8 @@ class ImageController extends Controller
 {
     public function store(Request $request)
     {
-        
-        $image = $request->image;
+
+        $image = $request->filename;
         $image = str_replace('data:model/stl;base64,', '', $image);
         $image = str_replace(' ', '+', $image);
         $imageName = Str::random(10) . '.stl';

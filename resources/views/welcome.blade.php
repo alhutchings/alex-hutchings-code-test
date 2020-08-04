@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- the router view enables vue router -->
         <router-view></router-view>
     </div>
 </body>

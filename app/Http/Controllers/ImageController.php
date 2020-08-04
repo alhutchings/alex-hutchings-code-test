@@ -11,7 +11,7 @@ class ImageController extends Controller
 {
     public function store(Request $request)
     {
-
+        
         $image = $request->image;
         $image = str_replace('data:model/stl;base64,', '', $image);
         $image = str_replace(' ', '+', $image);

@@ -15,13 +15,13 @@ class ImageController extends Controller
         $image = $request->filename;
 
         // beggining is removed from base64 string
-        $image = str_replace('data:model/stl;base64,', '', $image);
+        $image = str_replace('data:application/octet-stream;base64,', '', $image);
 
         // spaces are replaced with '+'
         $image = str_replace(' ', '+', $image);
 
         // a name is randomly assigned
-        $imageName = Str::random(10) . '.stl';
+        $imageName = Str::random(10) . '.STL';
 
         // the image is saved with it's image name for later retrieval
         $newimage = Image::create([
